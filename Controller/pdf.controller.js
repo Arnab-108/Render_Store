@@ -1,5 +1,6 @@
 const { pdfModel } = require("../Model/pdf.model")
 const fs = require("fs")
+const { readableForm } = require("../date")
 
 const Upload = async (req, res) => {
     try {
@@ -12,7 +13,8 @@ const Upload = async (req, res) => {
             user_name: req.user_name,
             name: req.body.name,
             description: req.body.description,
-            file: file
+            file: file,
+            date:readableForm
         })
         await note.save()
         res.status(200).send({ msg: "Successfully Uploaded!!", files: note })

@@ -5,7 +5,8 @@ const pdfSchema = mongoose.Schema({
     user_name:{type:String , required:true},
     name:{type:String , required:true},
     description:{type:String , required:true},
-    file:{type:String , required:true}
+    file:{type:String , required:true},
+    date:{type:String}
 },{
     versionKey:false,
     timestamps:true

@@ -14,7 +14,6 @@ const Upload = async (req, res) => {
             name: req.body.name,
             description: req.body.description,
             file: file,
-            date:readableForm
         })
         await note.save()
         res.status(200).send({ msg: "Successfully Uploaded!!", files: note })
